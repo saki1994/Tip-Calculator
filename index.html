@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+  
+  <!-- Google fonts link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">   
+
+</head>
+<body>
+  <img class="logo" src="images/logo.svg" alt="">
+
+
+  <section class="calc-box">
+
+    <div class="right-side">
+     <form action="#">
+       <label for="#">Bill</label> <br>
+       <div class="input-box">
+         <img src="images/icon-dollar.svg" alt="dollar-icon">
+         <input class="user-input" type="number" name="#" id="bill" placeholder="0.00">
+        </div>
+     </form>
+     <div class="tip-box">
+        <p>Select Tip %</p>
+        <div class="tip-btn">
+          <label for="btn-1">5%<input type="radio" value="1.05"name="tip"    class="btn" id="btn-1"></label>
+          <label for="btn-2">10%<input type="radio" value="1.1" name="tip" class="btn" id="btn-2"></label>
+          <label for="btn-3">15%<input type="radio"value="1.15" name="tip"  class="btn" id="btn-3"></label>
+          <label for="btn-4">25%<input type="radio"value="1.25" name="tip"  class="btn" id="btn-4"></label>
+          <label for="btn-5">50%<input type="radio"value="1.5" name="tip"  class="btn" id="btn-5"></label>
+          
+        <input type="number"  name="custom" class="btn" id="btn-6" placeholder="Custom">
+         </div>
+     </div> 
+     <form action="#">
+       <label for="#">Number of People</label> <br>
+       <div class="input-box people-box">
+         <img src="images/icon-person.svg" alt="person-icon">
+         <input class="user-input" type="number" name="#" id="people" placeholder="0">
+       </div>
+      </form>
+     </div>
+
+    <div class="left-side">
+      <div class="tip-amount">
+        <span class="tip">Tip Amount<br>/ person</span>
+        <p id="tip-per-person" class="amount">$0.00</p>
+      </div>
+      <div class="tip-total">
+        <span class="tip">Total<br>/ person</span>
+        <p id="total-per-person" class="amount">$0.00</p>
+      </div>
+      <div class='sub-cal-btn'>
+      <button onclick="calculate()" id="calculate">Calculate</button>
+      <button onclick="reset()" id="submit">Reset</button>
+    </div>
+      
+    </div>
+
+  </section>
+
+</div>  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Sarah Atici</a>.
+  </div> 
+</body>
+<script src="main.js"></script>
+</html>

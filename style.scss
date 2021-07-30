@@ -1,0 +1,258 @@
+@import 'variables';
+
+  
+
+body {
+  background-color: $light-grayish-cyan; 
+  overflow-x: hidden;  
+}
+
+* {
+    font-family: $font-family;
+}
+
+ .logo {
+    margin: auto;
+    display: block;
+    padding: 5%;
+    width: 70px;
+}
+ 
+.calc-box { 
+    background-color: $white;
+    width: 50%;
+    padding: $box-padding ;
+    margin: auto;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows:auto;
+    gap: 5%;
+    @include border-radius(15px);
+
+    .right-side, .left-side {
+        padding: $box-padding;  
+        box-sizing: $border-box;
+
+        input, button {
+            cursor: pointer;
+        }
+
+        input[type="number"] {
+            
+            font-weight: $heavy-weight;
+            -moz-appearance: textfield; 
+            color: $very-dark-cyan;
+             background-color: $lighter-grayish-cyan;
+            border: $border-remove;
+            &:focus {
+                outline: none;
+            }
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+           
+            
+        }
+    } 
+}
+
+.right-side { 
+    display: $display;
+    flex-direction: column;
+    gap: 5%;
+    box-sizing: $border-box;
+
+  p, label {
+    font-size: $small-font;
+    color: $darker-grayish-cyan;
+    font-weight: $heavy-weight;
+  }
+  form { 
+        .input-box { 
+            position:relative;
+            padding: $box-padding - 2%; 
+            background-color: $lighter-grayish-cyan;
+            @include border-radius(10px - 6px);
+            &:hover {
+                border: 2px solid $strong-dark-cyan;
+             }
+
+            &:invalid {
+                border: 1px solid red;
+            }
+            img {
+               position: absolute;
+               left: 10px; 
+               width: 8px;
+               bottom: 10px;
+            }
+         
+
+            .user-input {
+               margin: auto;
+               width: 90%;
+               font-size: $forms-input;
+               text-align: right; 
+            } 
+        }
+    }
+    .tip-btn {
+        display:grid;
+        grid-template-columns: repeat(3, calc(90% / 3));
+        grid-auto-rows: 30px;
+        gap: 15px; 
+        
+        label{ 
+            text-align: center;
+            background-color: $very-dark-cyan;
+            color: $white;
+            padding-top: $box-padding;
+            border: $border-remove; 
+            font-size: $forms-input; 
+            letter-spacing: 1px;
+            font-weight: $heavy-weight;
+            cursor: pointer;
+            @include border-radius(10px - 6px);
+
+            &:last-child {
+                background-color: $lighter-grayish-cyan; 
+                color: $darker-grayish-cyan;
+            }
+
+            &:hover {
+                background-color:$strong-dark-cyan;
+                color: $very-dark-cyan;
+            }
+
+            input[type="radio"] {
+                position:absolute;
+                display: none;
+            }
+        .btn-checked {
+            background-color: red;
+        }
+            
+        }
+        
+        #btn-6 {  
+            @include border-radius(10px - 6px);
+            &::placeholder {
+                text-align: center;
+            }
+            &:hover {
+                border: 2px solid $strong-dark-cyan;
+             }
+        }
+    } 
+}
+
+.left-side {
+    height:100%;
+    background-color: $very-dark-cyan;
+    padding: $box-padding * 2;
+    display: $display; 
+    gap: 5%;
+    flex-direction: column;
+    @include border-radius(10px);
+
+    .tip-amount, .tip-total { 
+        display: $display;
+        flex-direction: row;
+        height: 50px; 
+        color:$dark-grayish-cyan;
+         
+        .tip {
+            font-size: $small-font - 2; 
+            position: relative;
+            top: 30%; 
+
+            &::first-line {
+                color:$white;
+                font-size: $small-font;
+            }
+        } 
+         
+        .amount {
+            font-size: $forms-input * 2; 
+            text-align: right;
+            margin-left: auto;
+            position: relative;
+            bottom: 50%;
+            color:$strong-dark-cyan;
+            font-weight: $heavy-weight;
+        }
+         
+
+    }
+    .sub-cal-btn {
+        font-family: $font-family;
+        font-weight: bolder;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap:1%; 
+        margin-top: auto;
+        
+        button {
+            height: 35px;
+             border: $border-remove;
+             font-weight: $heavy-weight;
+             font-size: $forms-input; 
+             color:$very-dark-cyan;  
+             @include border-radius(10px - 6);
+        }
+
+        #calculate {
+            background-color: $white;
+        }
+        #calculate, #submit {
+            
+            &:hover {
+            background-color: $strong-dark-cyan; 
+            }
+        }
+
+        #submit {   
+            background-color: $light-grayish-cyan;
+        }  
+    }
+
+    
+ 
+}
+.attribution {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+@media only screen and (max-width: 790px) {
+    .calc-box {
+        padding: 3% 3% 8%; 
+        width:80%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    body {
+        margin: 0;
+        padding:0;
+
+        .calc-box {
+            padding:0; 
+            grid-template-columns: 100%; 
+            width: 100%;
+            gap:5%; 
+            padding-bottom: 15%; 
+
+            .left-side {
+                width: 90%;
+                margin: auto;
+            }
+        }
+    }
+    
+   
+}

@@ -1,0 +1,281 @@
+body {
+  background-color: #c5e4e7;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Space Mono", monospace;
+}
+
+.logo {
+  margin: auto;
+  display: block;
+  padding: 5%;
+  width: 70px;
+}
+
+.calc-box {
+  background-color: white;
+  width: 50%;
+  padding: 3%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(180px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: auto;
+  gap: 5%;
+  border-radius: 15px;
+}
+
+.calc-box .right-side, .calc-box .left-side {
+  padding: 3%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.calc-box .right-side input, .calc-box .right-side button, .calc-box .left-side input, .calc-box .left-side button {
+  cursor: pointer;
+}
+
+.calc-box .right-side input[type="number"], .calc-box .left-side input[type="number"] {
+  font-weight: 700;
+  -moz-appearance: textfield;
+  color: #00494d;
+  background-color: #f4fafa;
+  border: none;
+}
+
+.calc-box .right-side input[type="number"]:focus, .calc-box .left-side input[type="number"]:focus {
+  outline: none;
+}
+
+.calc-box .right-side input[type="number"]::-webkit-outer-spin-button, .calc-box .right-side input[type="number"]::-webkit-inner-spin-button, .calc-box .left-side input[type="number"]::-webkit-outer-spin-button, .calc-box .left-side input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.right-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.right-side p, .right-side label {
+  font-size: 11px;
+  color: #5e7a7d;
+  font-weight: 700;
+}
+
+.right-side form .input-box {
+  position: relative;
+  padding: 1%;
+  background-color: #f4fafa;
+  border-radius: 4px;
+}
+
+.right-side form .input-box:hover {
+  border: 2px solid #26c0ab;
+}
+
+.right-side form .input-box:invalid {
+  border: 1px solid red;
+}
+
+.right-side form .input-box img {
+  position: absolute;
+  left: 10px;
+  width: 8px;
+  bottom: 10px;
+}
+
+.right-side form .input-box .user-input {
+  margin: auto;
+  width: 90%;
+  font-size: 15px;
+  text-align: right;
+}
+
+.right-side .tip-btn {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc(90% / 3))[3];
+      grid-template-columns: repeat(3, calc(90% / 3));
+  grid-auto-rows: 30px;
+  gap: 15px;
+}
+
+.right-side .tip-btn label {
+  text-align: center;
+  background-color: #00494d;
+  color: white;
+  padding-top: 3%;
+  border: none;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.right-side .tip-btn label:last-child {
+  background-color: #f4fafa;
+  color: #5e7a7d;
+}
+
+.right-side .tip-btn label:hover {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+
+.right-side .tip-btn label input[type="radio"] {
+  position: absolute;
+  display: none;
+}
+
+.right-side .tip-btn label .btn-checked {
+  background-color: red;
+}
+
+.right-side .tip-btn #btn-6 {
+  border-radius: 4px;
+}
+
+.right-side .tip-btn #btn-6::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.right-side .tip-btn #btn-6:-ms-input-placeholder {
+  text-align: center;
+}
+
+.right-side .tip-btn #btn-6::-ms-input-placeholder {
+  text-align: center;
+}
+
+.right-side .tip-btn #btn-6::placeholder {
+  text-align: center;
+}
+
+.right-side .tip-btn #btn-6:hover {
+  border: 2px solid #26c0ab;
+}
+
+.left-side {
+  height: 100%;
+  background-color: #00494d;
+  padding: 6%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+}
+
+.left-side .tip-amount, .left-side .tip-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 50px;
+  color: #7f9c9f;
+}
+
+.left-side .tip-amount .tip, .left-side .tip-total .tip {
+  font-size: 9px;
+  position: relative;
+  top: 30%;
+}
+
+.left-side .tip-amount .tip::first-line, .left-side .tip-total .tip::first-line {
+  color: white;
+  font-size: 11px;
+}
+
+.left-side .tip-amount .amount, .left-side .tip-total .amount {
+  font-size: 30px;
+  text-align: right;
+  margin-left: auto;
+  position: relative;
+  bottom: 50%;
+  color: #26c0ab;
+  font-weight: 700;
+}
+
+.left-side .sub-cal-btn {
+  font-family: "Space Mono", monospace;
+  font-weight: bolder;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  gap: 1%;
+  margin-top: auto;
+}
+
+.left-side .sub-cal-btn button {
+  height: 35px;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  color: #00494d;
+  border-radius: 4px;
+}
+
+.left-side .sub-cal-btn #calculate {
+  background-color: white;
+}
+
+.left-side .sub-cal-btn #calculate:hover, .left-side .sub-cal-btn #submit:hover {
+  background-color: #26c0ab;
+}
+
+.left-side .sub-cal-btn #submit {
+  background-color: #c5e4e7;
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 790px) {
+  .calc-box {
+    padding: 3% 3% 8%;
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  body .calc-box {
+    padding: 0;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    width: 100%;
+    gap: 5%;
+    padding-bottom: 15%;
+  }
+  body .calc-box .left-side {
+    width: 90%;
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */

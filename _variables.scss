@@ -1,0 +1,30 @@
+//Box Model
+$box-padding: 3%; 
+$border-remove: none;
+$border-box:content-box;
+
+//Positioning
+$display: flex;
+
+//Typography
+$font-family:'Space Mono', monospace; 
+$small-font: 11px;
+$forms-input: 15px;
+$heavy-weight: 700;
+
+//Visual
+$white: hsl(0, 0%, 100%);
+$lighter-grayish-cyan: hsl(189, 41%, 97%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$dark-grayish-cyan: hsl(184, 14%, 56%);
+$darker-grayish-cyan: hsl(186, 14%, 43%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$strong-dark-cyan: hsl(172, 67%, 45%);
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius
+}
+ 
